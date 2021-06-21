@@ -13,3 +13,6 @@ const db = mongoose.connection;
 db.on('connected', function () {
   console.log(`Mongoose connected to: ${db.host}:${db.port}`);
 });
+
+
+// process.env.DATABASE_URL
