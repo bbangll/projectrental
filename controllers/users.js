@@ -3,5 +3,5 @@ module.exports = {
 }
 
 function index(req, res) {
-    res.send('Testing things out');
+    res.render('index');
 }
