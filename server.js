@@ -20,11 +20,6 @@ require('./config/passport');
 
 // routes requirements
 var indexRoutes = require('./routes/index');
-var usersRoutes = require('./routes/users')
-
-app.get('/', function(req,res){
-  res.render('index')
-})
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -36,6 +31,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+
 // mount the session middleware
 app.use(session({
   secret: 'SEI Rocks!',
@@ -57,7 +53,6 @@ app.use(function (req, res, next) {
 
 // mount all routes with appropriate base paths
 app.use('/', indexRoutes);
-app.use('/', usersRoutes);
 
 
 // invalid request, send 404 page
