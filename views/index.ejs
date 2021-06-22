@@ -4,13 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Rental Marketplace</title>
 </head>
+
 <body>
-    <% if (user) { %>
-		<a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
-	<% } else { %>
-		<a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
-	<% } %>
+   <main>
+       <div id="main">
+           <nav id="non-user">
+               <div id="navTextArea">
+                <h1>SwiftDrop</h1>
+                <h4>Bbang.</h4>
+               </div>
+               
+               <div id="navButtonArea">
+                <button id="addItemButton" class="squareButton"></button>
+                <button id="transactionListButton" class="squareButton"></button>
+                <button id="LogoutButton" class="squareButton"></button>
+               </div>
+           </nav>
+           <div id="content body"></div>
+       </div>
+   </main>
 </body>
 </html>
