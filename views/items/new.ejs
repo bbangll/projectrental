@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New items</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/form.css">
+</head>
+<body>
+    <main>
+        <div id="main">
+            <div id="navbar">
+                <h1 id="title">Create New Item.</h1>
+                <a id="closeButton" class="squareButton" href="/items/new">
+                    <img class="buttonIcons" src="/images/cancel.svg">
+                </a>
+            </div>
+            <div id="line"></div>
+            <form action="/items" method="POST" id="newItem">
+                <label>Item Name</label>
+                <input type="text" name="itemName" class="input">
+
+                <label>Item Price</label>
+                <input type="number" name="itemPrice" class="input">
+
+                <label>Item Location</label>
+                <input type="text" name="itemLocation" class="input">
+
+                <input type="submit" class="submitButton">
+            </form>
+        </div>
+    </main>
+</body>
+</html>

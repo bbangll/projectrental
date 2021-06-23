@@ -1,0 +1,77 @@
+main {
+    background: #F3DDBD;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    padding: 100px 0;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  #main {
+    background: chocolate;
+    height: auto;
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #navbar {
+    display: flex;
+    background: cornflowerblue;
+    height: 100px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #closeButton {
+    background:#E2CEB0;
+    height: 35px;
+    width: 35px;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    margin: 0 0 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .buttonIcons {
+    height: 50%;
+    width: auto;
+  }
+
+  #title {
+    font-weight: 800;
+    font-size: 30px;
+    margin: 0 10px 0 0;
+    padding: 0;
+  }
+
+  #line {
+      background: black;
+      height: 10px;
+      width: 100%;
+  }
+
+  form {
+      background: brown;
+      display: flex;
+      flex-direction: column;
+  }
+
+  .input {
+      margin: 0 0 10px 0;
+  }
+
+  .submitButton {
+      background: black;
+      color: white;
+      height: 70px;
+      width: 100%;
+  }
+

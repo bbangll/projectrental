@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/list.css">
     <title>Rental Marketplace</title>
 </head>
 
@@ -16,17 +16,34 @@
        <div id="main">
            <nav id="non-user">
                <div id="navTextArea">
-                <h1>SwiftDrop</h1>
-                <h4>Bbang.</h4>
+                <h1 id="swiftdrop">SwiftDrop.</h1>
+                <h4 id="userName">Bbang.</h4>
                </div>
-               
                <div id="navButtonArea">
-                <button id="addItemButton" class="squareButton"></button>
-                <button id="transactionListButton" class="squareButton"></button>
-                <button id="LogoutButton" class="squareButton"></button>
+                <a id="addItemButton" class="squareButton" href="/items/new">
+                    <img class="buttonIcons" src="/images/plus.svg">
+                </a>
+                <a id="transactionListButton" class="squareButton" href="/transactions/new">
+                    <img class="buttonIcons" src="/images/shopping-bag.svg">
+                </a>
+                <a id="LogoutButton" class="squareButton">
+                    <img class="buttonIcons" src="/images/exit.svg">
+                </a>
                </div>
            </nav>
-           <div id="content body"></div>
+           <div id="content-body">
+               <h4>Latest Items</h4>
+               <div id="itemList">
+                   <% items.forEach(i => { %>
+                    <a class="singleItem" href="items/<%= i._id %> ">
+                        <h3 id="itemName"><%= i.itemName %> </h3>
+                        <p id="itemPrice">$<%= i.itemPrice %>.00 </p>
+                        <p id="itemSeller"><%= i.itemLocation %> </p>
+                    </a>
+                   <% }) %>
+                   
+               </div>
+           </div>
        </div>
    </main>
 </body>
