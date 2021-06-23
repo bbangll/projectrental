@@ -13,7 +13,7 @@ function newItems(req, res) {
 function create(req, res) {
     const item = new Item(req.body);
     // Assign the logged in user's id
-    //book.user = req.user._id;
+    item.user = req.user._id;
     item.save(function(err, itemDoc) {
         if (err) return render('index');
         console.log(itemDoc, '<<<< this is our document')

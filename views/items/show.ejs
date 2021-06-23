@@ -14,29 +14,52 @@
     <main>
         <div id="main">
             <div id="navbar">
-                <h1 id="title">Buy Item.</h1>
+                <div id="updateDelete">
+                    <a id="closeButton" class="squareButton" href="/">
+                        <img class="buttonIcons" src="/images/cancel.svg">
+                    </a>
+                    <a id="closeButton" class="squareButton" href="/">
+                        <img class="buttonIcons" src="/images/cancel.svg">
+                    </a>
+                </div>
                 <a id="closeButton" class="squareButton" href="/">
                     <img class="buttonIcons" src="/images/cancel.svg">
                 </a>
             </div>
             <div id="line"></div>
-            <h1> <%= item.itemName %> </h1>
-            <h1> <%= item.itemPrice %> </h1>
-            <h1> <%= item.itemLocation %> </h1>
+            <div id=itemDetail>
+                <h1 id="itemName"> <%= item.itemName %> </h1>
+                <p class="sectionInfo"> $<%= item.itemPrice %>.00 </p>
+                <div id="line"></div>
+                <p class="subHeading"> Seller </p>
+                <p class="sectionInfo"> Hellava </p>
+                <p class="subHeading"> Item Location </p>
+                <p class="sectionInfo"> <%= item.itemLocation %> </p>
+            </div>
 
+            <div id="line"></div>
             <form action="/items/<%=item._id%>/reviews" method="POST" id="newItem">
-                <label>Quantity</label>
-                <input type="number" name="quantity" class="input">
+                <label>Feedback</label>
+                <input type="text" name="feedback" placeholder="e.g. 5" class="input">
+                <div class="inputLine"></div>
 
                 <input type="submit" class="submitButton">
             </form>
+
+        </div>
+    </main>
+</body>
+</html>
+
+
+
+
+            
+
+            
 
             <% if (item.reviews.length) { %>
                 <% item.reviews.forEach(r => { %>
                  <h1><%= r.quantity %> </h1>
                 <% }) %>
             <% } %>
-        </div>
-    </main>
-</body>
-</html>

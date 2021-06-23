@@ -8,94 +8,119 @@ main {
     font-family: 'Poppins', sans-serif;
   }
   
-  #main {
-    height: auto;
-    width: 400px;
-    display: flex;
-    flex-direction: column;
-  }
+#main {
+  height: auto;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+}
 
-  #navbar {
-    display: flex;
-    height: 100px;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-  }
+#navbar {
+  display: flex;
+  height: 100px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  #closeButton {
-    background:black;
-    height: 35px;
-    width: 35px;
-    padding: 0px;
-    display: flex;
-    align-items: center;
-    margin: 0 0 0 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 8px;
-    cursor: pointer;
-  }
+#closeButton {
+  background:#E2CEB0;
+  height: 35px;
+  width: 35px;
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  margin: 0 0 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  cursor: pointer;
+}
 
-  .buttonIcons {
-    height: 50%;
-    width: auto;
-  }
+.buttonIcons {
+  height: 50%;
+  width: auto;
+}
 
-  #title {
-    font-weight: 800;
-    font-size: 30px;
-    margin: 0 10px 0 0;
-    padding: 0;
-  }
+#title {
+  font-weight: 800;
+  font-size: 30px;
+  margin: 0 10px 0 0;
+  padding: 0;
+}
 
-  #line {
-      background: black;
-      height: 1px;
-      width: 100%;
-  }
-
-  form {
-      display: flex;
-      flex-direction: column;
-  }
-
-  input {
-    font-size: 16px;
-    border: none;
-    background: none;
-    padding: 5px 0 0 0;
-    margin: 0;
-    height: 30px;
-  }
-
-  input:clicked {
-    border: none;
-  }
-
-  .inputLine {
+#line {
     background: black;
     height: 1px;
     width: 100%;
-    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+  font-size: 16px;
+  border: none;
+  background: none;
+  padding: 3px 0;
+  margin: 0;
+  height: 30px;
+}
+
+input::placeholder {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+}
+
+.inputLine {
+  background: black;
+  height: 1px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+
+.submitButton {
+    background: black;
+    color: white;
+    height: 70px;
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
   }
 
+#newItem {
+  margin: 70px 0 0 0;
+}
 
-  .submitButton {
-      background: #E2CEB0;
-      color: white;
-      height: 70px;
-      width: 100%;
-      border-radius: 8px;
-      margin-top: 50px;
-      font-family: 'Poppins', sans-serif;
-      font-size: 16px;
-      cursor: pointer;
-    }
+.subHeading {
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 1;
+}
 
-  #newItem {
-    margin: 70px 0 0 0;
-  }
+.sectionInfo {
+  font-size: 16px;
+  line-height: 0;
+  margin-bottom: 30px;
+}
+
+#itemName {
+  line-height: 0.5;
+}
+
+#itemDetail {
+  margin-top: 50px;
+}
+
+#updateDelete {
+  display: flex;
+}
 
 

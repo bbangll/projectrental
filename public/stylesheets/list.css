@@ -1,6 +1,6 @@
 main {
   background: #F3DDBD;
-  height: 100vh;
+  height: auto;
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -140,6 +140,7 @@ main {
   left: 10px;
   opacity: 50%;
 }
+
 
 
 
