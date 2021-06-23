@@ -30,6 +30,12 @@
 
                 <input type="submit" class="submitButton">
             </form>
+
+            <% if (item.reviews.length) { %>
+                <% item.reviews.forEach(r => { %>
+                 <h1><%= r.quantity %> </h1>
+                <% }) %>
+            <% } %>
         </div>
     </main>
 </body>

@@ -13,7 +13,7 @@ passport.use(new GoogleStrategy({
   function(accessToken, refreshToken, profile, cb) {
     // a user has logged in via OAuth!
     // refer to the lesson plan from earlier today in order to set this up
-    console.log(profile, '<------ Profile');
+    console.log(profile.name.givenName, '<------ givenName');
 
     User.findOne({'googleId': profile.id}, function(err, userDoc){
       if (err) return cb(err);
@@ -21,8 +21,7 @@ passport.use(new GoogleStrategy({
         return cb(null, userDoc)
       } else {
         const newUser = new User({
-          username: profile.username,
-          password: profile.password,
+          name: profile.name.givenName,
           googleId: profile.id
         })
 
