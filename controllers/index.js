@@ -6,7 +6,7 @@ module.exports = {
 
 function index(req, res) {
     Item.find({}, function(err, allItemsDocuments) {
-        //console.log(allItemsDocuments)
+        console.log(allItemsDocuments)
         res.render('index', {
             items: allItemsDocuments
         })
