@@ -14,7 +14,7 @@ function create(req, res) {
       //req.body.userId = req.user._id;
       //req.body.userName = req.user.name;
       // Add the comment
-      item.transactions.push(req.body);
+      item.reviews.push(req.body);
       item.save(function(err) {
         res.redirect(`/items/${item._id}`);
       });
