@@ -15,7 +15,7 @@
    <main>
        <div id="main"> 
         <% if (user) { %>
-            <nav id="non-user">
+            <nav class="navbar">
                 <div id="navTextArea">
                  <h1 id="swiftdrop">SwiftDrop.</h1>
                  <h4 id="userName">Bbang.</h4>
@@ -30,14 +30,12 @@
                 </div>
             </nav>
         <% } else { %>
-            <nav id="non-user">
+            <nav class="navbar">
                 <div id="navTextArea">
                  <h1 id="swiftdrop">SwiftDrop.</h1>
                 </div>
                 <div id="navButtonArea">
-                 <a id="LogoutButton" class="squareButton" href="/auth/google">
-                     <img class="buttonIcons" src="/images/exit.svg">
-                 </a>
+                 <a id="signIn" href="/auth/google"> Sign In</a>
                 </div>
             </nav>
         <% } %>
@@ -50,6 +48,7 @@
                         <h3 id="itemName"><%= i.itemName %> </h3>
                         <p id="itemPrice">$<%= i.itemPrice %>.00 </p>
                         <p id="itemSeller"><%= i.itemLocation %> </p>
+                        <div id="itemBackground"></div>
                     </a>
                    <% }) %>
                </div>

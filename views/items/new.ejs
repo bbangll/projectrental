@@ -15,7 +15,7 @@
         <div id="main">
             <div id="navbar">
                 <h1 id="title">Create New Item.</h1>
-                <a id="closeButton" class="squareButton" href="/items/new">
+                <a id="closeButton" class="squareButton" href="/">
                     <img class="buttonIcons" src="/images/cancel.svg">
                 </a>
             </div>
@@ -23,12 +23,15 @@
             <form action="/items" method="POST" id="newItem">
                 <label>Item Name</label>
                 <input type="text" name="itemName" class="input">
+                <div class="inputLine"></div>
 
                 <label>Item Price</label>
                 <input type="number" name="itemPrice" class="input">
+                <div class="inputLine"></div>
 
                 <label>Item Location</label>
                 <input type="text" name="itemLocation" class="input">
+                <div class="inputLine"></div>
 
                 <input type="submit" class="submitButton">
             </form>
