@@ -14,7 +14,7 @@
     <main>
         <div id="main">
             <div id="navbar">
-                <% if (!item.userId.equals(user._id)) { %>
+                <% if (!item.userId.equals(user && user._id)) { %>
                     <a id="closeButton" class="squareButton" href="/">
                         <img class="buttonIcons" src="/images/cancel.svg">
                     </a>
