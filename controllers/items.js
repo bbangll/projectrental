@@ -1,4 +1,3 @@
-const item = require('../models/item');
 const Item = require('../models/item');
 
 module.exports = {
@@ -6,7 +5,8 @@ module.exports = {
     create,
     show,
     delete: deleteItem,
-    edit
+    edit,
+    update
 }
 
 function newItems(req, res) {
@@ -14,13 +14,13 @@ function newItems(req, res) {
 }
 
 function create(req, res) {
+    req.body.userId = req.user._id;
+    req.body.userName = req.user.name;
     const item = new Item(req.body);
     // Assign the logged in user's id
-    item.user = req.user._id;
-    item.user.name = req.user.name;
     item.save(function(err, itemDoc) {
         if (err) return render('index');
-        //console.log(itemDoc, '<<<< this is our document')
+        console.log(itemDoc, '<<<< this is our document')
         //res.redirect(`/items/${item._id}`);
         res.redirect('/');
     });
@@ -42,10 +42,20 @@ function deleteItem(req, res) {
 }
 
 function edit(req, res) {
-    Item.findById(req.params.id, function(err, book) {
+    Item.findById(req.params.id, function(err, item) {
+        console.log(req.user._id);
       // Verify book is "owned" by logged in user
-      if (!item.user.equals(req.user._id)) return res.redirect('/');
-      res.render('items/edit', {book});
+      if (!item.userId.equals(req.user._id)) return res.redirect('/');
+      res.render('items/edit', {item});
     });
+  };
+
+function update(req, res) {
+    Item.findByIdAndUpdate(req.params.id, req.body, function(err, item){
+        res.redirect(`/items/${item._id}`);
+    })
   }
+
+
+  
 

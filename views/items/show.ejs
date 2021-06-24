@@ -14,27 +14,34 @@
     <main>
         <div id="main">
             <div id="navbar">
-                <div id="updateDelete">
+                <% if (!item.userId.equals(user._id)) { %>
                     <a id="closeButton" class="squareButton" href="/">
-                        <img class="buttonIcons" src="/images/pen.svg">
+                        <img class="buttonIcons" src="/images/cancel.svg">
                     </a>
-                    <form action="/items/<%=item._id%>?_method=DELETE" method="POST">
-                        <button id="closeButton" class="squareButton" type="submit">
-                            <img class="buttonIcons" src="/images/delete.svg">
-                        </button>
-                    </form>
-                </div>
-                <a id="closeButton" class="squareButton" href="/">
-                    <img class="buttonIcons" src="/images/cancel.svg">
-                </a>
+                <% } else { %>
+                    <div id="updateDelete">
+                        <a id="closeButton" class="squareButton" href="/items/<%=item._id%>/edit">
+                            <img class="buttonIcons" src="/images/pen.svg">
+                        </a>
+                        <form action="/items/<%=item._id%>?_method=DELETE" method="POST">
+                            <button id="closeButton" class="squareButton" type="submit">
+                                <img class="buttonIcons" src="/images/delete.svg">
+                            </button>
+                        </form>
+                    </div>
+                    <a id="closeButton" class="squareButton" href="/">
+                        <img class="buttonIcons" src="/images/cancel.svg">
+                    </a>
+                <% } %>
             </div>
+
             <div id="line"></div>
             <div id=itemDetail>
                 <h1 id="itemName"> <%= item.itemName %> </h1>
                 <p class="sectionInfo"> $<%= item.itemPrice %>.00 </p>
                 <div id="line"></div>
                 <p class="subHeading"> Seller </p>
-                <p class="sectionInfo">Hellavalla</p> 
+                <p class="sectionInfo">Hellavalla <%=item.userName%> </p> 
                 <p class="subHeading"> Item Location </p>
                 <p class="sectionInfo"> <%= item.itemLocation %> </p>
             </div>

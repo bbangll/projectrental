@@ -5,8 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/form.css">
 </head>
 <body>
-    EDIT FORM IS SHOWING
+    <main>
+        <div id="main">
+            <div id="navbar">
+                <h1 id="title">Update Item.</h1>
+                <a id="closeButton" class="squareButton" href="/">
+                    <img class="buttonIcons" src="/images/cancel.svg">
+                </a>
+            </div>
+            <div id="line"></div>
+            <form action="/items/<%=item._id%>?_method=PUT" method="POST" id="newItem"> 
+                <label>Item Name</label>
+                <input type="text" name="itemName" placeholder="e.g. Nissan Skyline" class="input">
+                <div class="inputLine"></div>
+
+                <label>Item Price</label>
+                <input type="number" name="itemPrice" placeholder="e.g. 5" class="input">
+                <div class="inputLine"></div>
+
+                <label>Item Location</label>
+                <input type="text" name="itemLocation" placeholder="e.g. Brisbane, Queensland"c lass="input">
+                <div class="inputLine"></div>
+
+                <input type="submit" class="submitButton">
+            </form>
+        </div>
+    </main>
 </body>
 </html>

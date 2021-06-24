@@ -12,7 +12,8 @@ const itemSchema = new Schema({
     itemPrice: Number,
     itemLocation: String,
     reviews: [reviewSchema],
-    userId: {type: Schema.Types.ObjectId, ref: 'User'}
+    userId: {type: Schema.Types.ObjectId, ref: 'User'},
+    userName: String
 })
 
 module.exports = mongoose.model('Item', itemSchema)

@@ -7,5 +7,6 @@ router.get('/:id', itemsCtrl.show);
 router.delete('/:id', itemsCtrl.delete);
 // Updating an item
 router.get('/:id/edit', itemsCtrl.edit);
+router.put('/:id', itemsCtrl.update);
 
 module.exports = router;
