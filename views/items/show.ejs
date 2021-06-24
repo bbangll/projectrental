@@ -34,12 +34,20 @@
                 <p class="sectionInfo"> $<%= item.itemPrice %>.00 </p>
                 <div id="line"></div>
                 <p class="subHeading"> Seller </p>
-                <p class="sectionInfo">Hellavalla</p> 
+                <p class="sectionInfo"><%= user.name %> </p> 
                 <p class="subHeading"> Item Location </p>
                 <p class="sectionInfo"> <%= item.itemLocation %> </p>
             </div>
-
             <div id="line"></div>
+            <p class="subHeading"> item review </p>
+            <% if (item.reviews.length) { %>
+                <% item.reviews.forEach(r => { %>
+                    <div id="reviewBlock">
+                        <p class="subHeading"><%= user.name %> </p>
+                        <p class="sectionInfo"><%= r.feedback %> </p>
+                    </div>
+                <% }) %>
+            <% } %>
             <form action="/items/<%=item._id%>/reviews" method="POST" id="newItem">
                 <label>Feedback</label>
                 <input type="text" name="feedback" placeholder="e.g. 5" class="input">
@@ -47,6 +55,8 @@
 
                 <input type="submit" class="submitButton">
             </form>
+
+            <%= item.userId %> 
 
         </div>
     </main>
@@ -60,8 +70,4 @@
 
             
 
-            <% if (item.reviews.length) { %>
-                <% item.reviews.forEach(r => { %>
-                 <h1><%= r.quantity %> </h1>
-                <% }) %>
-            <% } %>
+          

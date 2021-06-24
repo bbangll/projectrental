@@ -5,7 +5,8 @@ module.exports = {
     new: newItems,
     create,
     show,
-    delete: deleteItem
+    delete: deleteItem,
+    edit
 }
 
 function newItems(req, res) {
@@ -39,4 +40,12 @@ function deleteItem(req, res) {
         res.redirect('/');
     });
 }
+
+function edit(req, res) {
+    Item.findById(req.params.id, function(err, book) {
+      // Verify book is "owned" by logged in user
+      if (!item.user.equals(req.user._id)) return res.redirect('/');
+      res.render('items/edit', {book});
+    });
+  }
 
