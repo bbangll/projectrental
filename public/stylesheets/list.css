@@ -1,19 +1,33 @@
 main {
   background: #F3DDBD;
+  position: relative;
   height: auto;
   width: 100vw;
   display: flex;
   justify-content: center;
-  padding: 100px 0;
   font-family: 'Poppins', sans-serif;
 }
 
+#background {
+  opacity: 20%;
+  background-image: radial-gradient(#212121 10%, transparent 10%), radial-gradient(#fafafa 10%, transparent 10%);
+  background-color: #F3DDBD;
+  background-position: 10px, 10px;
+  background-size: 20px 20px;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 0;
+}
+
 #main {
+  padding: 100px 0;
   height: auto;
   min-height: 100vh;
   width: 1080px;
   display: flex;
   flex-direction: column;
+  z-index: 10;
 }
 
 .navbar {
