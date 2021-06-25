@@ -1,34 +1,33 @@
-# passport-boilerplate
+# SwiftDrop Ecommerce
 
+---
 
-This is your passport boilerplate.
+## General info & Rules
 
-## Setup 
+Welcome to SwiftDrop Ecommerce! I've always wanted to create an ecommerce website from scratch and I'm slowly getting there.
+In this website you can't buy anything but you can create, update and delete an item that you've created.
 
-1. Clone the repo
-2. Rename the folder to your Project
-3. Delete the `.git` file, when you are in the root of the file, you can press `ls` and you should see a `.git` file, then go ahead and run `rm -rf .git`
+Good Luck!!
 
+## Screenshots & Gifs
+<img src="https://media.giphy.com/media/JUDWDxa5rCa4A6GvvP/source.gif" width="100%" height="auto">
+<img src="https://media.giphy.com/media/ZJoCNYVMSwnPXWr4JP/source.gif" width="100%" height="auto">
 
-#### Setup your git repo
-1. in the project root `git init`
-2. `git add .` to add all the starter code
-3. `git commit -m "setup boilerplate"` 
-4. go to github and create your github and create a repo (Without a readme or liscense you can add that later!)
-5. copy the remote address
-6. In your terminal add the remote `git remote add origin yourGithubRepo'sAddressGoesHere`
-7. `git pull origin master` If a screen pulls up asking you to do something just press `:q` and then `enter` (thats vim btw :) )
-8. `git push origin master`
+## Technologies Used
+JavaScript, HTML, CSS, SVG, Expressjs, Node.js, MongoDB, google OAuth, Passport
 
-#### Setup your login
+## Getting Started
 
-0. Setup your database connection string
-1. Then Setup Your User Model, 
-2. Follow the steps from the lesson plan to get your Google login credentials for your `.env` file (create the file if you haven't), or you can just copy the ones from earlier if you want to reuse them.
-3. Setup the Code in your config passport 
-4. Setup your callback routes in your `routes/index`
-5. Setup a view and test your login!
+Instructions:
+1. Click here to open the app - [SwiftDrop Ecommerce](https://projectrental.herokuapp.com/)
+2. Sign in
+3. Try adding, updating and deleting items.
+4. If you're logged in you could add reviews to an item.
+5. Have fun.
 
-#### Make a commit 
+Note: Each time you click on an item you could also see how many views that item has.
 
-```git commit -m "setup up oauth and User Model"```
+## Next Steps
+- I want to add images to each item, would make it so much realistic.
+- I want to add crud operations to the reviews.
+
