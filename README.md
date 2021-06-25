@@ -11,7 +11,6 @@ Good Luck!!
 
 ## Screenshots & Gifs
 <img src="https://media.giphy.com/media/JUDWDxa5rCa4A6GvvP/source.gif" width="100%" height="auto">
-<img src="https://media.giphy.com/media/ZJoCNYVMSwnPXWr4JP/source.gif" width="100%" height="auto">
 
 ## Technologies Used
 JavaScript, HTML, CSS, SVG, Expressjs, Node.js, MongoDB, google OAuth, Passport
