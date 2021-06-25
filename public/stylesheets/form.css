@@ -170,6 +170,7 @@ input::placeholder {
   border-radius: 8px;
   padding: 0 0 20px 30px;
   border: 1px solid black;
+  margin: 0 0 10px 0;
 }
 
 #feedbackHeading {
