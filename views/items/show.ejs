@@ -15,30 +15,37 @@
         <div id="main">
             <div id="navbar">
                 <% if (!item.userId.equals(user && user._id)) { %>
-                    <a id="closeButton" class="squareButton" href="/">
+                    <a class="squareButton" href="/">
                         <img class="buttonIcons" src="/images/cancel.svg">
                     </a>
                 <% } else { %>
                     <div id="updateDelete">
-                        <a id="closeButton" class="squareButton" href="/items/<%=item._id%>/edit">
+                        <a class="squareButton" href="/items/<%=item._id%>/edit">
                             <img class="buttonIcons" src="/images/pen.svg">
                         </a>
                         <form action="/items/<%=item._id%>?_method=DELETE" method="POST">
-                            <button id="closeButton" class="squareButton" type="submit">
+                            <button class="squareButton" type="submit">
                                 <img class="buttonIcons" src="/images/delete.svg">
                             </button>
                         </form>
                     </div>
-                    <a id="closeButton" class="squareButton" href="/">
+                    <a class="squareButton" href="/">
                         <img class="buttonIcons" src="/images/cancel.svg">
                     </a>
                 <% } %>
             </div>
 
-            <div id="line"></div>
+            <div id="navLine"></div>
             <div id=itemDetail>
                 <h1 id="itemName"> <%= item.itemName %> </h1>
-                <p class="sectionInfo"> $<%= item.itemPrice %>.00 </p>
+                <div id="priceAndViews">
+                    <p class="priceAndViewText"> $<%= item.itemPrice %>.00 </p>
+                    <div id="eyeViews">
+                        <img id="eyeIcon" src="/images/eye.svg">
+                        <p class="priceAndViewText"> <%= item.itemViews %> views</p>
+                    </div>
+                </div>
+                
                 <div id="line"></div>
                 <p class="subHeading"> Seller </p>
                 <p class="sectionInfo"><%=item.userName%> </p> 
@@ -46,23 +53,28 @@
                 <p class="sectionInfo"> <%= item.itemLocation %> </p>
             </div>
             <div id="line"></div>
-            <p class="subHeading"> item review </p>
+            <p class="subHeading"> Item Reviews </p>
             <% if (item.reviews.length) { %>
                 <% item.reviews.forEach(r => { %>
                     <div id="reviewBlock">
-                        <p class="subHeading"><%= r.userName %>  </p>
-                        <p class="sectionInfo"><%= r.feedback %> </p>
+                        <p id="feedbackHeading"><%=r.userName%></p>
+                        <p id="feedbackInfo"><%=r.feedback%></p>
                     </div>
                 <% }) %>
             <% } %>
-            <form action="/items/<%=item._id%>/reviews" method="POST" id="newItem">
-                <label>Feedback</label>
-                <input type="text" name="feedback" placeholder="e.g. 5" class="input">
-                <div class="inputLine"></div>
-
-                <input type="submit" class="submitButton">
-            </form>
-
+            <% if (user) { %>
+                <div id="line"></div>
+                <p class="subHeading"> Add a review </p>
+                <form action="/items/<%=item._id%>/reviews" method="POST" id="newItem">
+                    <label id="labelForm">Feedback</label>
+                    <input type="text" name="feedback" placeholder="e.g. 5" class="input">
+                    <div class="inputLine"></div>
+    
+                    <input type="submit" class="submitButton">
+                </form>
+            <% } else { %>
+                <a class="submitButton" href="/auth/google"> Sign in to add a review </a>
+            <% } %>
 
         </div>
     </main>

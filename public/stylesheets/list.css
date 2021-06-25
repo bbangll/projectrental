@@ -54,6 +54,7 @@ main {
   border-radius: 8px;
   cursor: pointer;
   transition: 0.4s ease-in-out;
+  border: 1px solid black;
 }
 
 .squareButton:hover {
@@ -117,13 +118,13 @@ main {
 #itemContent {
   width: 100%;
   height: 100%;
-  z-index: 100;
   background: #E2CEB0;
   border-radius: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  border: 1px solid black;
 }
 
 #itemName {
@@ -134,18 +135,18 @@ main {
   z-index: 1;
 }
 
-#itemPrice {
-  font-weight: 300;
-  line-height: 1.3;
-  margin: 0;
-  font-size: 20px;
-  z-index: 1;
-}
-
 #itemSeller {
   font-weight: 300;
   line-height: 1.3;
   margin: 0 0 10px 0;
+  font-size: 20px;
+  z-index: 1;
+}
+
+#itemPrice {
+  font-weight: 300;
+  line-height: 1.3;
+  margin: 0;
   font-size: 20px;
   z-index: 1;
 }
