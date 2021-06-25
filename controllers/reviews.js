@@ -11,8 +11,9 @@ function create(req, res) {
 
     Item.findById(req.params.id, function(err, item) {
       // Update req.body to contain user info
-      //req.body.userId = req.user._id;
-      //req.body.userName = req.user.name;
+      req.body.userId = req.user._id;
+      req.body.userName = req.user.name;
+      console.log(req.body);
       // Add the comment
       item.reviews.push(req.body);
       item.save(function(err) {

@@ -45,9 +45,11 @@
                <div id="itemList">
                    <% items.forEach(i => { %>
                     <a class="singleItem" href="items/<%= i._id %> ">
-                        <h3 id="itemName"><%= i.itemName %> </h3>
-                        <p id="itemPrice">$<%= i.itemPrice %>.00 </p>
-                        <p id="itemSeller"><%= i.userName %> </p>
+                        <div id="itemContent">
+                            <h3 id="itemName"><%= i.itemName %> </h3>
+                            <p id="itemSeller"><%= i.userName %> </p>
+                            <p id="itemPrice">$<%= i.itemPrice %>.00 </p>
+                        </div>
                         <div id="itemBackground"></div>
                     </a>
                    <% }) %>

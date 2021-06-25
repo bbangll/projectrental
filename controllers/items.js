@@ -1,3 +1,4 @@
+const item = require('../models/item');
 const Item = require('../models/item');
 
 module.exports = {
@@ -28,15 +29,19 @@ function create(req, res) {
 
 function show(req, res) {
     Item.findById(req.params.id).populate('userId').exec(function(err, items) {
-        res.render('items/show', {
-            item: items
-        });
+        items.itemViews = items.itemViews + 1;
+        items.save(function() {
+            console.log(items);
+            res.render('items/show', {
+                item: items
+            });
+        })
     });
 }
 
 function deleteItem(req, res) {
     console.log(req.params.id, "Hey Puta - this is the req.params");
-    item.findByIdAndDelete(req.params.id, function(err) {
+    Item.findByIdAndDelete(req.params.id, function(err) {
         res.redirect('/');
     });
 }
@@ -54,7 +59,7 @@ function update(req, res) {
     Item.findByIdAndUpdate(req.params.id, req.body, function(err, item){
         res.redirect(`/items/${item._id}`);
     })
-  }
+}
 
 
   

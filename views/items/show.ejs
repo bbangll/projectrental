@@ -41,7 +41,7 @@
                 <p class="sectionInfo"> $<%= item.itemPrice %>.00 </p>
                 <div id="line"></div>
                 <p class="subHeading"> Seller </p>
-                <p class="sectionInfo">Hellavalla <%=item.userName%> </p> 
+                <p class="sectionInfo"><%=item.userName%> </p> 
                 <p class="subHeading"> Item Location </p>
                 <p class="sectionInfo"> <%= item.itemLocation %> </p>
             </div>
@@ -50,7 +50,7 @@
             <% if (item.reviews.length) { %>
                 <% item.reviews.forEach(r => { %>
                     <div id="reviewBlock">
-                        <p class="subHeading">Hellavalla </p>
+                        <p class="subHeading"><%= r.userName %>  </p>
                         <p class="sectionInfo"><%= r.feedback %> </p>
                     </div>
                 <% }) %>

@@ -87,48 +87,19 @@ main {
 }
 
 .singleItem {
-  background: #E2CEB0;
   height: 200px;
   width: 250px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   margin: 0 20px 15px 0;
   border-radius: 8px;
   cursor: pointer;
   text-decoration: none;
   color: black;
   position: relative;
-  transition: 0.4s ease-in-out;
+  transition: 0.4s ease;
 }
 
 .singleItem:hover {
-  background: #DABB9E;
-}
-
-#itemName {
-  font-weight: 800;
-  line-height: 1;
-  margin: 0;
-  font-size: 20px;
-  z-index: 1;
-}
-
-#itemPrice {
-  font-weight: 300;
-  line-height: 1.3;
-  margin: 5px 0 0 0;
-  font-size: 16px;
-  z-index: 1;
-}
-
-#itemSeller {
-  font-weight: 300;
-  line-height: 1.3;
-  margin: 5px 0 0 0;
-  font-size: 16px;
-  z-index: 1;
+  transform: translate(0, -5px);
 }
 
 #itemBackground {
@@ -137,10 +108,48 @@ main {
   width: 100%;
   position: absolute;
   border-radius: 8px;
-  top: 10px;
-  left: 10px;
+  top: 13px;
+  left: 13px;
   opacity: 50%;
+  z-index: 0;
 }
+
+#itemContent {
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background: #E2CEB0;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#itemName {
+  font-weight: 800;
+  line-height: 1;
+  margin: 0 0 2px 0;
+  font-size: 20px;
+  z-index: 1;
+}
+
+#itemPrice {
+  font-weight: 300;
+  line-height: 1.3;
+  margin: 0;
+  font-size: 20px;
+  z-index: 1;
+}
+
+#itemSeller {
+  font-weight: 300;
+  line-height: 1.3;
+  margin: 0 0 10px 0;
+  font-size: 20px;
+  z-index: 1;
+}
+
 
 
 
